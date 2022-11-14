@@ -5,24 +5,10 @@ pipeline {
 }
     stages{
         
-        stage('code checkout and stash repo containing Dockerfile and app.py file'){
-            agent {
-                label 'jennode'
-            }
-            
-            steps{
-                
-                
-                script{
-                    git url: "https://github.com/shubhamsinglaip/Dockerfile-and-app.py.git"
-                    stash 'source'
-                                      
-                }
-            }
-        }
+        
         stage('Build Docker Image'){
             agent {
-                label 'myfirstnode'
+                label 'jennode'
             }
             
             
@@ -35,7 +21,7 @@ pipeline {
         }
         stage('Push Image to Dockerhub'){
             agent {
-                label 'myfirstnode'
+                label 'jennode'
             }
             
             steps{
@@ -47,7 +33,7 @@ pipeline {
         }
         stage('Pull Image from Hub'){
             agent {
-                label 'myfirstnode'
+                label 'jennode'
             }
             
             steps{
@@ -58,7 +44,7 @@ pipeline {
         }
         stage('Start Container'){
             agent {
-                label 'myfirstnode'
+                label 'jennode'
             }
             
             steps{
