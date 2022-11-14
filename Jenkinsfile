@@ -6,9 +6,10 @@ pipeline {
     stages{
         
         stage('stash code'){
-            git branch: 'main', url: 'git url: "https://github.com/shubhamsinglaip/Dockerfile-and-app.py.git"'
+            
             
             steps{
+                git branch: 'main', url: 'git url: "https://github.com/shubhamsinglaip/Dockerfile-and-app.py.git"'
                 stash 'source'
                 
                 
