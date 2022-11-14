@@ -4,7 +4,9 @@ pipeline {
      shubham_docker=credentials('shubham_docker')
 }
     stages{
+        
         stage('stash code'){
+            git branch: 'main' url: 'git url: "https://github.com/shubhamsinglaip/Dockerfile-and-app.py.git"'
             
             steps{
                 stash 'source'
